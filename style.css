@@ -13,6 +13,8 @@ body{
 		"d e b b q"
 		"d e y y q"
 	;	
+	background-color: white;
+	z-index: -2;
 }
 
 .wrapper2{
@@ -27,7 +29,7 @@ body{
 	color: #88bbe3;
 	font-size: 1.5rem;
 	background-color: black;
-	z-index: -2;
+	z-index: -3;
 }
 
 .wrapperz{
@@ -42,7 +44,7 @@ body{
 	color: #88bbe3;
 	font-size: 1.5rem;
 	background-color: black;
-	z-index: -2;
+	z-index: -3;
 }
 
 .wrapper5{
@@ -60,14 +62,49 @@ body{
 	z-index: -2;
 }
 
+.wrapper5-1{
+	height: 100vh;
+	position: relative;
+	left: 600px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	color: blue;
+	color: #88bbe3;
+	font-size: 1.5rem;
+	background-color: rgb(228, 99, 59);
+	z-index: -2;
+	background-image: url('assets/asset.svg');
+	   background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.bat-wrapper{
+	display: flex;
+	justify-content: center;
+	width: 100vw;
+	height: 100vh;
+	flex-direction: column;
+	align-items: center;
+
+}
+
 .batlogo{
-	height: 384px;
-	width: 384px;
+	height: 100vh;
+	width: 100vw;
 	background-image: url('assets/logo.png');
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: cover;
-	mix-blend-mode: color-burn;
+	background-size: 350px;
+/*	mix-blend-mode: multiply;*/
+	clip-path: circle(0% at 50% 50%);
+	background-color: #4d4dfb;
+	transition: 3s;
+}
+
+.hoverbat{
+	clip-path: circle(100% at 50% 50%) !important;
 }
 
 .wrapper3{
@@ -92,19 +129,22 @@ body{
 	left: 600px;
 	transition: 4s;
 	background-color: rgb(227, 255, 0);
+	z-index: -3;
 }
 
 .wrapper6{
 	height: 100vh;
 	width: 1000px;
-	background-image: url('assets/jumping.jpg');
+	/*background-image: url('assets/jumping.jpg');*/
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
 	position: relative;
 	left: 600px;
 	transition: 4s;
-	background-color: rgb(227, 255, 0);
+	/*background-color: rgb(227, 255, 0);*/
+	background-color: black;
+	z-index: -3;
 }
 
 .wrapper4:hover{
@@ -117,7 +157,6 @@ body{
 
 .wrapperz p{
 	width: 800px;
-	margin-left: 300px;
 }
 
 .four{
@@ -265,7 +304,8 @@ body{
 }
 
 .three{
-
+	color: orange;
+	mix-blend-mode: difference;
 }
 
 .four span{
@@ -302,12 +342,12 @@ body{
 
 .death{
 	clip-path: polygon(100% 0, 75% 50%, 100% 100%, 20% 100%, 0 50%, 20% 0%);
-	background-image: url('assets/multicover.JPG');
+	background-image: url('assets/multicover.jpg');
 	background-position: right;
 	background-size: 100%;
 	background-repeat: no-repeat;
 	grid-area: q;
-	width: 1700px;
+	width: 70vw;
 	height: 100vh;
 	right: -850px;
 	position: absolute;
