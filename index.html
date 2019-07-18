@@ -13,7 +13,7 @@
 
     <title>Hello, world!</title>
   </head>
-  <body style="overflow-y: hidden">
+  <body style="overflow-y: hidden; background-color: black;" class="big-body">
     <div class="wrapper">
       <div class="one"></div>
       <div class="two">
@@ -74,17 +74,21 @@
       <div class="death"></div>
     </div>
 
-    <div class="wrapper2">
+    <div class="wrapper6">
+      <div class="jumping" style="width: 1000px;"></div>
     </div>
+<!-- 
+    <div class="wrapper2">
+    </div> -->
 
     <div class="wrapperz">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+<!--       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
       quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
       consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
       cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
     </div>
 
     <div class="wrapper3">
@@ -118,12 +122,9 @@
       <div class="gorilla" style="width: 1000px;"></div>
     </div>
 
-    <div class="wrapper6">
-      <div class="jumping" style="width: 1000px;"></div>
-    </div>
 
-    <div class="wrapper5">
-      <div style="display: flex; justify-content: center; width: 900px;">
+    <div class="wrapper5-1" id="final-wrap">
+      <div class="bat-wrapper">
         <div class="batlogo"></div>
       </div>
     </div>
@@ -135,6 +136,30 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <script>
+
+      document.addEventListener("readystatechange", event => {
+        if (event.target.readyState === "loading") {
+          // initLoader();
+          $(".big-body").css({
+            "visibility":"hidden"
+          })
+          console.log("loading")
+        }
+        else if (event.target.readyState === 'interactive') {
+          // initApp();
+          $(".big-body").css({
+            "visibility":"hidden"
+          })
+          console.log("interactive")
+        }
+        else if (event.target.readyState === 'complete') {
+          // initApp();
+          $(".big-body").css({
+            "visibility":"inherit"
+          })
+          console.log("complete")
+        }
+      });
 
       $(window).scroll(function(){
         let scrollPos = $(this).scrollLeft();
@@ -170,13 +195,10 @@
           'background-position-y' : 0 + scrollPos/5
         });
       });
-
-      // window.onscroll=function(){
-      //   const nav = document.querySelector('two');
-      //   if (this.scrollX <= 100){
-      //     nav.className = 'absolution';
-      //   }
-      // }
+      $('#final-wrap').hover(function(){
+        let spotLight = document.querySelector('.batlogo');
+        spotLight.className = "batlogo hoverbat";
+      });
 
     </script>
   </body>
